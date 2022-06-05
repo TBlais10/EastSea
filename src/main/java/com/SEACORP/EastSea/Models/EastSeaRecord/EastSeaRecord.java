@@ -1,6 +1,16 @@
-package com.SEACORP.EastSea.Models.EastSea;
+package com.SEACORP.EastSea.Models.EastSeaRecord;
 
-public class EastSea {
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+
+public class EastSeaRecord {
     private double year;
     private double month;
     private double day;
@@ -8,19 +18,6 @@ public class EastSea {
     private double lon;
     private double vgs;
     private double adts;
-
-    public EastSea() {
-    }
-
-    public EastSea(double year, double month, double day, double lat, double lon, double vgs, double adts) {
-        this.year = year;
-        this.month = month;
-        this.day = day;
-        this.lat = lat;
-        this.lon = lon;
-        this.vgs = vgs;
-        this.adts = adts;
-    }
 
     public double getYear() {
         return year;
