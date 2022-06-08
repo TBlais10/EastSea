@@ -9,14 +9,14 @@ public class EastSeaSetMapper implements FieldSetMapper<EastSeaRecord> {
     @Override
         public EastSeaRecord mapFieldSet(FieldSet fieldSet) throws BindException {
         return new EastSeaRecord(
-                fieldSet.readDouble("year"),
-                fieldSet.readDouble("month"),
-                fieldSet.readDouble("day"),
-                fieldSet.readDouble("lat"),
-                fieldSet.readDouble("lon"),
-                fieldSet.readDouble("vgs"),
-                fieldSet.readDouble("ugs"),
-                fieldSet.readDouble("adts")
+                fieldSet.readString("year"),
+                fieldSet.readString("month"),
+                fieldSet.readString("day"),
+                fieldSet.readString("lat"),
+                fieldSet.readString("lon"),
+                fieldSet.readString("vgs"),
+                fieldSet.readString("ugs"),
+                fieldSet.readString("adts")
         );
     }
 }

@@ -1,8 +1,5 @@
 package com.SEACORP.EastSea.Auth;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Column;
-
 import javax.persistence.*;
 
 @Entity
@@ -12,7 +9,7 @@ public class Role {
     private Long id;
 
     @Enumerated(EnumType.STRING)
-//    @Column(length = 20) //length is not loading
+    @Column(length = 20)
     private ERole name;
 
     public Role() {

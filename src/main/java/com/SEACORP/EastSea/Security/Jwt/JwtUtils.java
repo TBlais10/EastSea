@@ -14,7 +14,7 @@ import java.util.Date;
 public class JwtUtils {
     private static Logger logger = LoggerFactory.getLogger(JwtUtils.class);
 
-    @Value("${reflect.app.jwtSecret}")
+    @Value("${EastSea.app.jwtSecret}")
     public String jwtSecret;
 
     //Experation code added here. @Value w/ jwtExperatoinMs

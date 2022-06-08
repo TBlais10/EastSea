@@ -1,4 +1,5 @@
 assets
+*.csv
 *.properties
 HELP.md
 .gradle

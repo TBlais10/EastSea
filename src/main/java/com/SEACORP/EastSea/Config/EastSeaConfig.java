@@ -32,12 +32,12 @@ public class EastSeaConfig {
     public FlatFileItemReader<EastSeaRecord> recordItemReader(){
         FlatFileItemReader<EastSeaRecord> reader = new FlatFileItemReader<>();
         reader.setLinesToSkip(1); //skips the line explaining the data types
-        reader.setResource(new ClassPathResource("/East Sea/data_for_vis.csv"));
+        reader.setResource(new ClassPathResource("data_for_vis.csv"));
 
         DefaultLineMapper<EastSeaRecord> recordLineMapper = new DefaultLineMapper<>();
 
         DelimitedLineTokenizer tokenizer = new DelimitedLineTokenizer();
-        tokenizer.setNames(new String[] {"year", "month", "day", "lat", "lon", "vgs", "adts"});
+        tokenizer.setNames(new String[] {"year", "month", "day", "lat", "lon", "vgs", "ugs", "adts"});
 
         recordLineMapper.setLineTokenizer(tokenizer);
 
@@ -57,7 +57,7 @@ public class EastSeaConfig {
 
         itemWriter.setDataSource(this.dataSource);
 
-        itemWriter.setSql("Insert into eastsea_record values(:year, :month, :day, :lat, :log, :vgs, :adts)"); // TODO: 6/4/2022 Create database with this table
+        itemWriter.setSql("Insert into eastsea_record values(:year, :month, :day, :lat, :log, :vgs, :ugs, :adts)"); // TODO: 6/4/2022 Create database with this table
 
         itemWriter.setItemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>());
         itemWriter.afterPropertiesSet();
