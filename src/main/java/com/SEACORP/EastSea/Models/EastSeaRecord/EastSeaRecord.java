@@ -1,26 +1,44 @@
 package com.SEACORP.EastSea.Models.EastSeaRecord;
 
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-@Entity
-@Data
-@Builder
-
+@Entity(name = "eastsea_record")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@EntityListeners(AuditingEntityListener.class)
 public class EastSeaRecord {
     @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "year")
     private String year;
+
+    @Column(name = "month")
     private String month;
+
+    @Column(name = "day")
     private String day;
+
+    @Column(name = "lat")
     private String lat;
+
+    @Column(name = "lon")
     private String lon;
+
+    @Column(name = "vgs")
     private String vgs;
+
+    @Column(name = "ugs")
     private String ugs;
+
+    @Column(name = "adts")
     private String adts;
 
     public EastSeaRecord(String year, String month, String day, String lat, String lon, String vgs, String ugs, String adts) {

@@ -32,7 +32,7 @@ public class EastSeaConfig {
     public FlatFileItemReader<EastSeaRecord> recordItemReader(){
         FlatFileItemReader<EastSeaRecord> reader = new FlatFileItemReader<>();
         reader.setLinesToSkip(1); //skips the line explaining the data types
-        reader.setResource(new ClassPathResource("data_for_vis.csv"));
+        reader.setResource(new ClassPathResource("/data/data_for_vis.csv"));
 
         DefaultLineMapper<EastSeaRecord> recordLineMapper = new DefaultLineMapper<>();
 
@@ -40,11 +40,8 @@ public class EastSeaConfig {
         tokenizer.setNames(new String[] {"year", "month", "day", "lat", "lon", "vgs", "ugs", "adts"});
 
         recordLineMapper.setLineTokenizer(tokenizer);
-
         recordLineMapper.setFieldSetMapper(new EastSeaSetMapper());
-
         recordLineMapper.afterPropertiesSet();
-
         reader.setLineMapper(recordLineMapper);
 
         return reader;
