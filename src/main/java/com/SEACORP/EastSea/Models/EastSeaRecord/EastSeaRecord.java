@@ -51,5 +51,77 @@ public class EastSeaRecord {
         this.ugs = ugs;
         this.adts = adts;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+    public String getMonth() {
+        return month;
+    }
+
+    public void setMonth(String month) {
+        this.month = month;
+    }
+
+    public String getDay() {
+        return day;
+    }
+
+    public void setDay(String day) {
+        this.day = day;
+    }
+
+    public String getLat() {
+        return lat;
+    }
+
+    public void setLat(String lat) {
+        this.lat = lat;
+    }
+
+    public String getLon() {
+        return lon;
+    }
+
+    public void setLon(String lon) {
+        this.lon = lon;
+    }
+
+    public String getVgs() {
+        return vgs;
+    }
+
+    public void setVgs(String vgs) {
+        this.vgs = vgs;
+    }
+
+    public String getUgs() {
+        return ugs;
+    }
+
+    public void setUgs(String ugs) {
+        this.ugs = ugs;
+    }
+
+    public String getAdts() {
+        return adts;
+    }
+
+    public void setAdts(String adts) {
+        this.adts = adts;
+    }
 }
 

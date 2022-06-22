@@ -3,9 +3,12 @@ package com.SEACORP.EastSea.Processor;
 import com.SEACORP.EastSea.Models.EastSeaRecord.EastSeaRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.batch.item.ItemProcessor;
+import org.springframework.stereotype.Component;
 
-import javax.batch.api.chunk.ItemProcessor;
+import java.util.Map;
 
+@Component
 public class EastSeaProcessor implements ItemProcessor<EastSeaRecord, EastSeaRecord> {
 
     private static final Logger logger = LoggerFactory.getLogger(EastSeaProcessor.class);
@@ -27,8 +30,4 @@ public class EastSeaProcessor implements ItemProcessor<EastSeaRecord, EastSeaRec
         return transformedData;
     }
 
-    @Override
-    public Object processItem(Object item) throws Exception {
-        return null;
-    }
 }
