@@ -1,16 +1,13 @@
 package com.SEACORP.EastSea.Models.EastSeaRecord;
 
 import lombok.*;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 
-@Entity(name = "eastsea_record")
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@EntityListeners(AuditingEntityListener.class)
+@Builder
 public class EastSeaRecord {
     @Id
     @Column(name = "id")
@@ -51,6 +48,7 @@ public class EastSeaRecord {
         this.ugs = ugs;
         this.adts = adts;
     }
+
 
     public Long getId() {
         return id;

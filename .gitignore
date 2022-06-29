@@ -1,4 +1,5 @@
 assets
+.sql
 *.csv
 *.properties
 HELP.md
