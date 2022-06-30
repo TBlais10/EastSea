@@ -45,13 +45,13 @@ public class EastSeaConfig {
        return reader;
    }
 
-   /*rawtypes, unchecked*/
+   @SuppressWarnings({"rawtypes", "unchecked"})
    @Bean
     public JdbcBatchItemWriter<EastSeaRecord> itemWriter(){
        JdbcBatchItemWriter<EastSeaRecord> writer = new JdbcBatchItemWriter<>();
 
        writer.setDataSource(dataSource);
-       writer.setSql("INSERT into eastsea_record values (:year, :month, :day, :lat, :lon, :vgs, :ugs, :adts)");
+       writer.setSql("INSERT INTO eastsea_record VALUES (:year, :month, :day, :lat, :lon, :vgs, :ugs, :adts)");
        writer.setItemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>());
        writer.afterPropertiesSet();
 

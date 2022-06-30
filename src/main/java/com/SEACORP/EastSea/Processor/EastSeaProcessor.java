@@ -6,8 +6,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.stereotype.Component;
 
-import java.util.Map;
-
 @Component
 public class EastSeaProcessor implements ItemProcessor<EastSeaRecord, EastSeaRecord> {
 
